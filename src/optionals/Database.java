@@ -9,7 +9,7 @@ public class Database {
     }
 
     User getUser(long id) {
-        if(id == 1) {
+        if (id == 1) {
             return user1;
         }
 

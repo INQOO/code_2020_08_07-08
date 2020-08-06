@@ -10,7 +10,7 @@ public class Streams2Loop {
         boolean isSandraInNames = false;
 
         for (String name : names) {
-            if("Sandra".equals(name)) {
+            if ("Sandra".equals(name)) {
                 isSandraInNames = true;
                 break;
             }

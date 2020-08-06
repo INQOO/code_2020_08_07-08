@@ -14,8 +14,7 @@ public class FunctionalInterfaces {
         Function<Integer, Long> multiline = x -> {
             if (x != null && x % 2 == 0) {
                 return (long) x * x;
-            }
-            else {
+            } else {
                 return 123L;
             }
         };
