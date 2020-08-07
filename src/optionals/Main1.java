@@ -7,6 +7,11 @@ public class Main1 {
         User user5 = database.getUser(5);
 
         System.out.println(user1.getName());
-        System.out.println(user5.getName());
+
+        if(user5 != null) {
+            System.out.println(user5.getName());
+        } else {
+            System.out.println("user5 jest null");
+        }
     }
 }
