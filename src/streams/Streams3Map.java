@@ -4,7 +4,9 @@ import streams.model.Employee;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Streams3Map {
 
@@ -19,6 +21,9 @@ public class Streams3Map {
                 .map(Employee::getName)
                 .collect(Collectors.toList());
 
-        System.out.println(names);
+        employees.stream()
+                .filter(x -> x.getAge() > 30)
+                .filter(x -> x.getSalary().compareTo(BigDecimal.valueOf(5000)) == 1)
+                .forEach(x -> System.out.println(x.getName() + " wiek: " + x.getAge() + "  wypłata: " + x.getSalary()));
     }
 }
