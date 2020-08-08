@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
 
@@ -16,7 +17,17 @@ public class Assignment1 {
     }
 
     public static List<String> findY(String[] strings) {
-        return emptyList();
+        return Stream.of(strings)
+                .filter(x -> x.startsWith("y"))
+                .filter(x -> x.endsWith("y"))
+                .collect(Collectors.toList());
+
+//       druga metoda
+//        Stream<String> stream = Arrays.stream(strings);
+//        List find = stream.filter(x -> x.startsWith("y"))
+//                .filter(x -> x.endsWith("y"))
+//                .collect(Collectors.toList());
+//        return find;
     }
 
 }

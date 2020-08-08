@@ -1,6 +1,10 @@
 package streams.assignments;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Assignment2 {
     public static void main(String[] args) {
@@ -14,6 +18,14 @@ public class Assignment2 {
     }
 
     public static void starsWithoutDuplicates(Set<String> words) {
+
+        words.stream()
+                .map(String::toUpperCase)
+                .distinct()
+                .map((y -> y.concat("*")))
+//                .collect(Collectors.toList())
+                .forEach(y -> System.out.println(y));
+
 
     }
 }
