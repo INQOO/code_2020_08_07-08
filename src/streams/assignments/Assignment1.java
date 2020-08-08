@@ -16,7 +16,9 @@ public class Assignment1 {
     }
 
     public static List<String> findY(String[] strings) {
-        return emptyList();
+        return Arrays.stream(strings)
+                .filter(x -> x.startsWith("y") && x.endsWith("y"))
+                .collect(Collectors.toList());
     }
 
 }

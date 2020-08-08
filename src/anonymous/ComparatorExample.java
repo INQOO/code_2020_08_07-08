@@ -30,7 +30,27 @@ public class ComparatorExample {
 
 //        Comparator<Integer> comparator = ??? co dalej?
 
-//        List<Integer> numbers = Arrays.asList(3, 5, 1, 4);
+        List<Integer> numbers = new ArrayList<>();
 //        numbers.sort(comparator);
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
+            System.out.println("podaj liczbe " + (i + 1));
+
+            numbers.add(Integer.valueOf(scanner.nextLine()));
+        }
+        System.out.println(numbers.toString());
+//        Collections.sort(numbers);
+//        System.out.println(numbers.toString());
+//        Collections.reverse(numbers);
+//        System.out.println(numbers.toString());
+
+        numbers.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if (o1 > o2) return -1;
+                if (o1 < o2) return 1;
+                return 0;
+            }
+        });
     }
 }

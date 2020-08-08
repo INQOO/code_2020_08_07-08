@@ -12,7 +12,7 @@ class TodoList {
     long idCounter = 1;
 
     void run() {
-        while(true) {
+        while (true) {
             showMenu();
             MenuOption choice = askUser();
 
@@ -33,20 +33,30 @@ class TodoList {
     }
 
     private void exit() {
-        // mozna wypisac koniec
-        // wygooglujcie, jak zakonczyc program w java
+        System.out.println("To już jest KONIEC");
+        System.exit(0);
     }
 
     private void showTasks() {
-        // sprawdzic czy sa jakies zadania
-        // jesli nie ma, to wypiszmy "brak zadan"
-        // jesli sa, to:
-        // zapytac o kategorie
-        // wypisac wszystkie zadania z listy tasks
-        //    ktore maja wybrana kategorie
+        if (tasks.isEmpty()) {
+            System.out.println("Lista PUSTA");
+        } else {
+            System.out.println("Podaj kategorie");
+            String wybor = scanner.next().toUpperCase();
+            tasks.stream().filter(x->x.category).forEach(x-> System.out.println(x));
 
-        // ZROBIC TO STREAMEM
+
+        }
     }
+    // sprawdzic czy sa jakies zadania
+    // jesli nie ma, to wypiszmy "brak zadan"
+    // jesli sa, to:
+    // zapytac o kategorie
+    // wypisac wszystkie zadania z listy tasks
+    //    ktore maja wybrana kategorie
+
+    // ZROBIC TO STREAMEM
+
 
     private void removeTask() {
         // zapytac usera o id
@@ -60,8 +70,13 @@ class TodoList {
         Category category = Category.valueOf(scanner.next());
 
         System.out.print("Podaj nazwę: ");
-        String name = scanner.nextLine();
+        String name = scanner.next();
 
+        Todo zadanie = new Todo();
+        zadanie.name = name;
+        zadanie.category = category;
+        zadanie.id = idCounter + 1;
+       tasks.add(zadanie);
         // stworzyc nowy Todo z ta nazwa i kategoria
         // jako id ustawic biezacy idCounter i zwiekszyc go o 1
         // wiec np. pierwsze todo ma miec id 1, drugie 2, itd.
@@ -84,7 +99,7 @@ class TodoList {
 
     private MenuOption askUser() {
         System.out.print("Podaj opcję: ");
-        String choice = scanner.next();
+        String choice = scanner.next().toUpperCase();
         return MenuOption.valueOf(choice);
     }
 }
