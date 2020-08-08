@@ -19,6 +19,11 @@ public class Streams3Map {
                 .map(Employee::getName)
                 .collect(Collectors.toList());
 
+        employees.stream()
+                .filter(x -> x.getAge() >= 30)
+                .filter(z -> z.getSalary().compareTo(BigDecimal.valueOf(5000)) == 1) // (5000) > 0
+                .forEach(y -> System.out.println(y.getName()));
+
         System.out.println(names);
     }
 }
