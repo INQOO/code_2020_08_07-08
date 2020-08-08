@@ -18,11 +18,13 @@ public class FunctionalInterfaces {
                 return 123L;
             }
         };
+        multiline.apply(2);
 
         // specyficzna implementacja interfejsu Function - typ argumentu i typ zwracany są takie same
         UnaryOperator<Integer> square = x -> x * x;
 
         // metoda test, która przyjmuje instancję klasy T i zwraca flagę (boolean)
         Predicate<String> startsWithNumberOne = s -> s.startsWith("1");
+        System.out.println(startsWithNumberOne.test("123"));
     }
 }
