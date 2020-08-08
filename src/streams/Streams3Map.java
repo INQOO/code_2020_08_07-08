@@ -15,10 +15,12 @@ public class Streams3Map {
                 new Employee("Julia", 45, new BigDecimal(10_000))
         );
 
-        List<String> names = employees.stream()
-                .map(Employee::getName)
-                .collect(Collectors.toList());
+        // wypisz pracownikow:
+        // majacych co najmniej 30 lat
+        // zarabiajacych powyzej 5000
 
-        System.out.println(names);
+        employees.stream()
+                .forEach(x -> System.out.println(x.getName()));
+
     }
 }

@@ -8,11 +8,11 @@ public class Streams2Stream1 {
     public static void main(String[] args) {
         List<String> names = List.of("Kate", "John", "Sandra");
 
-        List<String> sandras = names.stream()
-                .filter(name -> "Sandra".equals(name))
-                .collect(Collectors.toList());
+        names.forEach(x -> System.out.println(x));
 
-        boolean isSandraInNames = !sandras.isEmpty();
-        System.out.println(isSandraInNames);
+        names.stream()
+                .filter(name -> "Sandra".equals(name))
+                .forEach(name -> System.out.println(name));
+
     }
 }

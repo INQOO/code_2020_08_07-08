@@ -9,7 +9,10 @@ public class Streams1 {
 
         System.out.println("Ile wszystkich liczb: " + numbers.size());
 
-        long unique = numbers.stream().distinct().count();
+        long unique = numbers.stream()
+                .filter(x -> x < 3)
+                .distinct()
+                .count();
 
         System.out.println("Unikalnych liczb: " + unique);
     }
