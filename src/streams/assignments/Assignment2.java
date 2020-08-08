@@ -1,5 +1,6 @@
 package streams.assignments;
 
+import java.util.List;
 import java.util.Set;
 
 public class Assignment2 {
@@ -10,6 +11,7 @@ public class Assignment2 {
         // zamieni kazde slowo na duze litery
         // do kazdego slowa dopisze *
         // wypisze te slowa (metoda ma wypisywac, NIE zwracac)
+        // powinno wypisac ["ASDF*", "JAVA*", "INQOO*"]
         starsWithoutDuplicates(words);
     }
 
